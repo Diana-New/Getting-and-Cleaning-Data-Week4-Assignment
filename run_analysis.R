@@ -74,4 +74,5 @@ total_mean <- final_data %>% group_by(subject,label) %>%
 dim(total_mean) # 180x69
 
 # Save the result in a new R-Script
-write.table(total_mean,file="./total_mean.txt",row.names=T,col.names = T)
+write.table(total_mean,file="./total_mean.txt",row.names=F,col.names = T)
+
