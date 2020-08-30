@@ -1,0 +1,139 @@
+
+@Diana-New
+@works123
+works123/Sample CodeBook
+Forked from JorisSchut/gist:dbc1fc0402f28cad9b41
+Last active 2 years ago • Report abuse
+
+---
+title: "Codebook for total_mean.txt"
+author: Di Y.
+date: 30.08.2020
+output:
+  html_document:
+    keep_md: yes
+---
+
+## Project Description & Collection of the raw data
+The project is about "Smartphone-Based Recognition of Human Activities and Postural Transitions Data Set". The activity recognition data set built from the recordings of 30 subjects 
+performing 6 basic activities and postural transitions while carrying a waist-mounted smartphone with embedded inertial sensors. More details you'll find under 
+"http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones".
+	
+
+###Guide to create the tidy data file
+Download the zip-data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and unzip it in a local order.
+The downloaded order contains
+  1) unlabeled training datasets x and y
+  2) unlabeled testing datasets x and y
+  3) 2 sets of subject labels for training and training data
+  4) 1 set of features for the measurement
+  5) 1 set of activity labels containing 6 activities conducted in the experiment
+
+###Cleaning of the data
+Using read.table, the raw data sets can be read rightly.
+
+##Description of the variables in the total_mean.txt file
+The total_mean.txt is a tidy data set with the average of each variable for each activity and each subject. 
+The form of total_mean.txt is a text file, containing space-separated values.
+ - Dimensions of the dataset: 180x69
+ - Summary of the data: the first row contains the 69 names of the variables and the following rows contain the values of these variables.
+ - the 69 variable names are: 
+    "subject"
+    "label" 
+    "activity" 
+    "tBodyAcc-mean()-X"
+    "tBodyAcc-mean()-Y"
+    "tBodyAcc-mean()-Z"
+    "tBodyAcc-std()-X"
+    "tBodyAcc-std()-Y"
+    "tBodyAcc-std()-Z"
+    "tGravityAcc-mean()-X"
+    "tGravityAcc-mean()-Y"
+    "tGravityAcc-mean()-Z"
+    "tGravityAcc-std()-X"
+    "tGravityAcc-std()-Y"
+    "tGravityAcc-std()-Z"
+    "tBodyAccJerk-mean()-X"
+    "tBodyAccJerk-mean()-Y"
+    "tBodyAccJerk-mean()-Z"
+    "tBodyAccJerk-std()-X"
+    "tBodyAccJerk-std()-Y"
+    "tBodyAccJerk-std()-Z"
+    "tBodyGyro-mean()-X"
+    "tBodyGyro-mean()-Y"
+    "tBodyGyro-mean()-Z"
+    "tBodyGyro-std()-X"
+    "tBodyGyro-std()-Y"
+    "tBodyGyro-std()-Z"
+    "tBodyGyroJerk-mean()-X"
+    "tBodyGyroJerk-mean()-Y"
+    "tBodyGyroJerk-mean()-Z"
+    "tBodyGyroJerk-std()-X"
+    "tBodyGyroJerk-std()-Y"
+    "tBodyGyroJerk-std()-Z"
+    "tBodyAccMag-mean()"
+    "tBodyAccMag-std()"
+    "tGravityAccMag-mean()"
+    "tGravityAccMag-std()"
+    "tBodyAccJerkMag-mean()"
+    "tBodyAccJerkMag-std()"
+    "tBodyGyroMag-mean()"
+    "tBodyGyroMag-std()"
+    "tBodyGyroJerkMag-mean()"
+    "tBodyGyroJerkMag-std()"
+    "fBodyAcc-mean()-X"
+    "fBodyAcc-mean()-Y"
+    "fBodyAcc-mean()-Z"
+    "fBodyAcc-std()-X"
+    "fBodyAcc-std()-Y"
+    "fBodyAcc-std()-Z"
+    "fBodyAccJerk-mean()-X"
+    "fBodyAccJerk-mean()-Y"
+    "fBodyAccJerk-mean()-Z"
+    "fBodyAccJerk-std()-X"
+    "fBodyAccJerk-std()-Y"
+    "fBodyAccJerk-std()-Z"
+    "fBodyGyro-mean()-X"
+    "fBodyGyro-mean()-Y"
+    "fBodyGyro-mean()-Z"
+    "fBodyGyro-std()-X"
+    "fBodyGyro-std()-Y"
+    "fBodyGyro-std()-Z"
+    "fBodyAccMag-mean()"
+    "fBodyAccMag-std()"
+    "fBodyBodyAccJerkMag-mean()"
+    "fBodyBodyAccJerkMag-std()"
+    "fBodyBodyGyroMag-mean()"
+    "fBodyBodyGyroMag-std()"
+    "fBodyBodyGyroJerkMag-mean()"
+    "fBodyBodyGyroJerkMag-std()"
+
+###Variable 1-3 are:
+subject: from 1 to 30, indicating the 30 tester in the experiment
+label: from 1 to 6
+activity: corresponding to the values of the "label" variable. They are 6 basic activities:
+    WALKING
+    WALKING_UPSTAIRS
+    WALKING_DOWNSTAIRS
+    SITTING
+    STANDING
+    LAYING
+###Variable 4-69 are:
+The 66 variables are features from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) 
+were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz 
+to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another 
+low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ).
+Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, 
+fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+The set of variables that were estimated from these signals in the total_mean.txt are: 
+  -mean(): Mean value
+  -std(): Standard deviation
+
+
+##Class of the variable: 
+"Label" variable is factor type. "Subject" variable is integer type. All the other variables are numeric type.
+
