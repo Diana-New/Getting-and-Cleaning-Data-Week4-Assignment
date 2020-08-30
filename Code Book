@@ -14,7 +14,7 @@ output:
     keep_md: yes
 ---
 
-## Project Description & Collection of the raw data
+Project Description & Collection of the raw data
 The project is about "Smartphone-Based Recognition of Human Activities and Postural Transitions Data Set". The activity recognition data set built from the recordings of 30 subjects 
 performing 6 basic activities and postural transitions while carrying a waist-mounted smartphone with embedded inertial sensors. More details you'll find under 
 "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones".
